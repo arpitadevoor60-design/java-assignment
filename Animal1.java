@@ -1,25 +1,36 @@
-class Animal
-{
-    String Name="Animal";
-    void Eats()
+ class Animal1 {
+    String Name;
+    Animal1(String Name)
     {
-        System.out.println("Animal Eats");
+        this.Name=Name;
+    }
+    void Eat()
+    {
+        System.out.println("Name:"+"Eat");
     }
 }
-class Dog extends Animal
-{
-    void Barks()
-    {
-        System.out.println("Dog Barks");
+class Dog extends Animal1 {
+    String breed;
+
+    Dog(String Name) {
+        super(Name);
+        this.breed = breed;
     }
-}
-public class Animal1
-{
+
+    void bark() {
+        System.out.println("Name:" + "bark");
+    }
+
+    void display() {
+        System.out.println("Name:" + super.Name);
+        System.out.println("Breed:" + breed);
+        super.Eat();
+        bark();
+    }
+
     public static void main(String[] args)
     {
-        Dog d = new Dog();
-        System.out.println(d.Name);
-        d.Eats();
-        d.Barks();
+        Dog d=new Dog("tommay");
+        d.display();
     }
 }
